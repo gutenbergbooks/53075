@@ -1,0 +1,3016 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style type="text/css">
+  /*<![CDATA[*/
+  /*
+  Project Gutenberg common docutils stylesheet.
+
+  This stylesheet contains styles common to HTML and EPUB.  Put styles
+  that are specific to HTML and EPUB into their relative stylesheets.
+
+  :Author: Marcello Perathoner (webmaster@gutenberg.org)
+  :Copyright: This stylesheet has been placed in the public domain.
+
+  This stylesheet is based on:
+
+  :Author: David Goodger (goodger@python.org)
+  :Copyright: This stylesheet has been placed in the public domain.
+
+  Default cascading style sheet for the HTML output of Docutils.
+
+  */
+
+  /* ADE 1.7.2 chokes on !important and throws all css out. */
+
+  /* FONTS */
+
+  .italics    { font-style: italic }
+  .no-italics { font-style: normal }
+
+  .bold       { font-weight: bold }
+  .no-bold    { font-weight: normal }
+
+  .small-caps { } /* Epub needs italics */
+  .gesperrt   { } /* Epub needs italics */
+  .antiqua    { font-style: italic } /* what else can we do ? */
+  .monospaced { font-family: monospace }
+
+  .smaller    { font-size: smaller }
+  .larger     { font-size: larger }
+
+  .xx-small   { font-size: xx-small }
+  .x-small    { font-size: x-small }
+  .small      { font-size: small }
+  .medium     { font-size: medium }
+  .large      { font-size: large }
+  .x-large    { font-size: x-large }
+  .xx-large   { font-size: xx-large }
+
+  .text-transform-uppercase { text-transform: uppercase }
+  .text-transform-lowercase { text-transform: lowercase }
+  .text-transform-none      { text-transform: none }
+
+  .red        { color: red }
+  .green      { color: green }
+  .blue       { color: blue }
+  .yellow     { color: yellow }
+  .white      { color: white }
+  .gray       { color: gray }
+  .black      { color: black }
+
+  /* ALIGN */
+
+  .left       { text-align: left }
+  .justify    { text-align: justify }
+  .center     { text-align: center; text-indent: 0 }
+  .centerleft { text-align: center; text-indent: 0 }
+  .right      { text-align: right;  text-indent: 0 }
+
+  /* LINE HEIGHT */
+
+  body        { line-height: 1.5 }
+  p           { margin: 0;
+              text-indent: 2em }
+
+  /* PAGINATION */
+
+  .title, .subtitle     { page-break-after:  avoid }
+
+  .container, .title, .subtitle, #pg-header
+                      { page-break-inside: avoid }
+
+  /* SECTIONS */
+
+  body         { text-align: justify }
+
+  p.pfirst, p.noindent {
+    text-indent: 0
+  }
+
+  .boxed         { border: 1px solid black; padding: 1em }
+  .topic, .note  { margin: 5% 0; border: 1px solid black; padding: 1em }
+  div.section    { clear: both }
+
+  div.line-block       { margin: 1.5em 0 }  /* same leading as p */
+  div.line-block.inner { margin: 0 0 0 10% }
+  div.line             { margin-left: 20%; text-indent: -20%; }
+  .line-block.noindent div.line { margin-left: 0; text-indent: 0; }
+
+  hr.docutils          { margin: 1.5em 40%; border: none; border-bottom: 1px solid black; }
+  div.transition       { margin: 1.5em 0 }
+
+  .vfill, .vspace      { border: 0px solid white }
+
+  .title               { margin: 1.5em 0 }
+  .title.with-subtitle { margin-bottom: 0 }
+  .subtitle            { margin: 1.5em 0 }
+
+  /* header font style */
+  /* http://dev.w3.org/csswg/css3-fonts/#propdef-font-size */
+
+  h1.title                        { font-size: 200%; }  /* for book title only */
+  h2.title, p.subtitle.level-1    { font-size: 150%; margin-top: 4.5em;  margin-bottom: 2em }
+  h3.title, p.subtitle.level-2    { font-size: 120%; margin-top: 2.25em; margin-bottom: 1.25em }
+  h4.title, p.subtitle.level-3    { font-size: 100%; margin-top: 1.5em;  margin-bottom: 1.5em;  font-weight: bold; }
+  h5.title, p.subtitle.level-4    { font-size:  89%; margin-top: 1.87em; margin-bottom: 1.69em; font-style: italic; }
+  h6.title, p.subtitle.level-5    { font-size:  60%; margin-top: 3.5em;  margin-bottom: 2.5em }
+
+  /* title page */
+
+  h1.title, p.subtitle.level-1,
+  h2.title, p.subtitle.level-2    { text-align: center }
+
+  #pg-header,
+  h1.document-title               { margin: 10% 0 5% 0 }
+  p.document-subtitle             { margin:  0  0 5% 0 }
+
+  /* PG header and footer */
+  #pg-machine-header { }
+  #pg-produced-by { }
+
+  li.toc-entry            { list-style-type: none }
+  ul.open li, ol.open li  { margin-bottom: 1.5em }
+
+  .attribution            { margin-top: 1.5em }
+
+  .example-rendered {
+    margin: 1em 5%; border: 1px dotted red;  padding: 1em; background-color: #ffd }
+  .literal-block.example-source   {
+    margin: 1em 5%; border: 1px dotted blue; padding: 1em; background-color: #eef }
+
+  /* DROPCAPS */
+
+  /* BLOCKQUOTES */
+
+  blockquote { margin: 1.5em 10% }
+
+  blockquote.epigraph { }
+
+  blockquote.highlights { }
+
+  div.local-contents { margin: 1.5em 10% }
+
+  div.abstract { margin: 3em   10% }
+  div.image    { margin: 1.5em  0  }
+  div.caption  { margin: 1.5em  0 }
+  div.legend   { margin: 1.5em  0 }
+
+  .hidden { display: none }
+
+  .invisible { visibility: hidden; color: white } /* white: mozilla print bug */
+
+  a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+  dl.docutils dd {
+  margin-bottom: 0.5em }
+
+  div.figure { margin-top: 3em; margin-bottom: 3em }
+
+  img { max-width: 100% }
+
+  div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+  div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+  div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+  ol.simple, ul.simple { margin: 1.5em 0 }
+
+  ol.toc-list,    ul.toc-list    { padding-left:  0  }
+  ol ol.toc-list, ul ul.toc-list { padding-left:  5% }
+
+  ol.arabic {
+  list-style: decimal }
+
+  ol.loweralpha {
+  list-style: lower-alpha }
+
+  ol.upperalpha {
+  list-style: upper-alpha }
+
+  ol.lowerroman {
+  list-style: lower-roman }
+
+  ol.upperroman {
+  list-style: upper-roman }
+
+  p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+  p.label {
+  white-space: nowrap }
+
+  p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+  p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+  p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+  p.topic-title, p.admonition-title {
+  font-weight: bold }
+
+  pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+  .literal-block, .doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em; }
+
+  span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+  span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+  span.interpreted {
+  font-family: sans-serif }
+
+  span.option {
+  white-space: nowrap }
+
+  span.pre {
+  white-space: pre }
+
+  span.problematic {
+  color: red }
+
+  span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 100% }
+
+  table { margin-top: 1.5em; margin-bottom: 1.5em; border-spacing: 0 }
+  table.align-left, table.align-right { margin-top: 0 }
+
+  table.table                { border-collapse: collapse; }
+
+  table.table.hrules-table thead          { border: 1px solid black; border-width: 2px 0 0 }
+  table.table.hrules-table tbody          { border: 1px solid black; border-width: 2px 0 }
+  table.table.hrules-rows  tr             { border: 1px solid black; border-width: 0 0 1px }
+  table.table.hrules-rows  tr.last        { border-width: 0 }
+  table.table.hrules-rows  td,
+  table.table.hrules-rows  th             { padding: 1ex 1em; vertical-align: middle }
+
+  table.table tr             { border-width: 0 }
+  table.table td,
+  table.table th             { padding: 0.5ex 1em }
+  table.table tr.first td    { padding-top: 1ex }
+  table.table tr.last td     { padding-bottom: 1ex }
+  table.table tr.first th    { padding-top: 1ex }
+  table.table tr.last th     { padding-bottom: 1ex }
+
+
+  table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+  table.docinfo {
+  margin: 3em 4em }
+
+  table.docutils { }
+
+  div.footnote-group          { margin: 1em 0 }
+  table.footnote td.label     { width: 2em; text-align: right; padding-left: 0 }
+
+  table.docutils td, table.docutils th,
+  table.docinfo td, table.docinfo th {
+  padding: 0 0.5em;
+  vertical-align: top }
+
+  table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+  /* used to remove borders from tables and images */
+  .borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+  table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "!important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 } /* FIXME: was !important */
+
+  h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+  h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+  ul.auto-toc {
+  list-style-type: none }
+  /*]]>*/
+  </style>
+  <style type="text/css">
+  /*<![CDATA[*/
+  /*
+  Project Gutenberg HTML docutils stylesheet.
+
+  This stylesheet contains styles specific to HTML.
+  */
+
+  /* FONTS */
+
+  /* em                { font-style: normal }
+  strong            { font-weight: normal } */
+
+  .small-caps       { font-variant: small-caps }
+  .gesperrt         { letter-spacing: 0.1em }
+
+  /* ALIGN */
+
+  .align-left       { clear: left;
+                    float: left;
+                    margin-right: 1em }
+
+  .align-right      { clear: right;
+                    float: right;
+                    margin-left: 1em }
+
+  .align-center     { margin-left: auto;
+                    margin-right: auto }
+
+  div.shrinkwrap    { display: table; }
+
+  /* SECTIONS */
+
+  body              { margin: 5% 10% 5% 10% }
+
+  /* compact list items containing just one p */
+  li p.pfirst       { margin-top: 0; margin-bottom: 0 }
+
+  .first            { margin-top: 0 !important;
+                    text-indent: 0 !important }
+  .last             { margin-bottom: 0 !important }
+
+  span.dropcap      { float: left; margin: 0 0.1em 0 0; line-height: 1 }
+  img.dropcap       { float: left; margin: 0 0.5em 0 0; max-width: 25% }
+  span.dropspan     { font-variant: small-caps }
+
+  .no-page-break    { page-break-before: avoid !important }
+
+  /* PAGINATION */
+
+  .pageno           { position: absolute; right: 95%; font: medium sans-serif; text-indent: 0 }
+  .pageno:after     { color: gray; content: '[' attr(title) ']' }
+  .lineno           { position: absolute; left:  95%; font: medium sans-serif; text-indent: 0 }
+  .lineno:after     { color: gray; content: '[' attr(title) ']' }
+  .toc-pageref      { float: right }
+
+  @media screen {
+   .coverpage, .frontispiece, .titlepage, .verso, .dedication, .plainpage
+                       { margin: 10% 0; }
+
+   div.clearpage, div.cleardoublepage
+                       { margin: 10% 0; border: none; border-top: 1px solid gray; }
+
+   .vfill              { margin:  5% 10% }
+  }
+
+  @media print {
+   div.clearpage       { page-break-before: always; padding-top: 10% }
+   div.cleardoublepage { page-break-before: right;  padding-top: 10%  }
+
+   .vfill              { margin-top: 20% }
+   h2.title            { margin-top: 20% }
+  }
+
+  /* DIV */
+  pre               { font-family: monospace; font-size: 0.9em; white-space: pre-wrap }
+  /*]]>*/
+  </style>
+  <title>SONGS OF THE GLENS OF ANTRIM</title>
+</head>
+<body>
+  <div class="document" id="songs-of-the-glens-of-antrim">
+    <h1 class="center document-title level-1 pfirst title"><span class="x-large">SONGS OF THE GLENS OF ANTRIM</span></h1><!-- this is the default PG-RST stylesheet -->
+    <!-- figure and image styles for non-image formats -->
+    <!-- default transition -->
+    <!-- default attribution -->
+    <!-- -*- encoding: utf-8 -*- -->
+    <div class="clearpage"></div><!-- -*- encoding: utf-8 -*- -->
+    <div class="container titlepage">
+      <div class="vspace" style="height: 4em"></div>
+      <p class="center pfirst"><span class="bold red xx-large">Songs of<br />
+      The Glens of Antrim</span></p>
+      <div class="vspace" style="height: 2em"></div>
+      <p class="center pfirst"><span class="medium">BY</span></p>
+      <p class="center pnext"><span class="large">MOIRA O'NEILL</span></p>
+      <p class="center pnext"><span class="medium">AUTHOR OF 'THE ELF ERRANT,' ETC., ETC.</span></p>
+      <div class="vspace" style="height: 3em"></div>
+      <p class="center pfirst"><span class="medium">ELEVENTH IMPRESSION</span></p>
+      <div class="vspace" style="height: 3em"></div>
+      <p class="center pfirst"><span class="medium">NEW YORK<br />
+      THE MACMILLAN COMPANY<br />
+      MCMIV</span></p>
+      <p class="center pnext"><em class="italics small">All Rights reserved</em></p>
+      <div class="vspace" style="height: 4em"></div>
+    </div>
+    <div class="container dedication">
+      <p class="center pfirst"><em class="italics medium">TO</em> <span class="medium"><br /></span><em class="italics medium">W. C. S.</em></p>
+      <div class="vspace" style="height: 4em"></div>
+    </div>
+    <p class="center pfirst"><span class="bold large">PREFACE.</span></p>
+    <div class="vspace" style="height: 2em"></div>
+    <p class="pfirst"><span>These Songs of the Glens of Antrim were written by a Glenswoman in the dialect of the Glens, and chiefly for the pleasure of other Glens-people.</span></p>
+    <p class="pnext"><span>By the courtesy of the Editors of 'Blackwood' and the 'Spectator' they are republished here.</span></p>
+    <div class="vspace" style="height: 1em"></div>
+    <p class="noindent pfirst"><span>MOIRA O'NEILL.</span></p>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst"><span class="bold large">CONTENTS.</span></p>
+    <div class="vspace" style="height: 2em"></div>
+    <p class="noindent pfirst"><a class="reference internal" href="#the-song-of-glen-dun">THE SONG OF GLEN DUN</a> <span><br /></span><a class="reference internal" href="#corrymeela">CORRYMEELA</a> <span><br /></span><a class="reference internal" href="#marriage">MARRIAGE</a> <span><br /></span><a class="reference internal" href="#sea-wrack">SEA WRACK</a> <span><br /></span><a class="reference internal" href="#a-broken-song">A BROKEN SONG</a> <span><br /></span><a class="reference internal" href="#the-fairy-lough">THE FAIRY LOUGH</a> <span><br /></span><a class="reference internal" href="#a-song-of-glenann">A SONG OF GLENANN</a> <span><br /></span><a class="reference internal" href="#forgettin">"FORGETTIN'"</a> <span><br /></span><a class="reference internal" href="#denny-s-daughter">DENNY'S DAUGHTER</a> <span><br /></span><a class="reference internal" href="#lost">LOST</a> <span><br /></span><a class="reference internal" href="#cuttin-rushes">"CUTTIN' RUSHES"</a> <span><br /></span><a class="reference internal" href="#the-ould-lad">"THE OULD LAD"</a> <span><br /></span><a class="reference internal" href="#the-rachray-man">THE RACHRAY MAN</a> <span><br /></span><a class="reference internal" href="#birds">BIRDS</a> <span><br /></span><a class="reference internal" href="#johneen">JOHNEEN</a> <span><br /></span><a class="reference internal" href="#beauty-s-a-flower">"BEAUTY'S A FLOWER"</a> <span><br /></span><a class="reference internal" href="#the-boy-from-ballytearim">THE BOY FROM BALLYTEARIM</a> <span><br /></span><a class="reference internal" href="#i-mind-the-day">I MIND THE DAY</a> <span><br /></span><a class="reference internal" href="#grace-for-light">GRACE FOR LIGHT</a> <span><br /></span><a class="reference internal" href="#the-grand-match">THE GRAND MATCH</a> <span><br /></span><a class="reference internal" href="#the-sailor-man">THE SAILOR MAN</a> <span><br /></span><a class="reference internal" href="#at-sea">AT SEA</a> <span><br /></span><a class="reference internal" href="#lookin-back">"LOOKIN' BACK"</a> <span><br /></span><a class="reference internal" href="#the-north-westcanada">THE NORTH-WEST—CANADA</a> <span><br /></span><a class="reference internal" href="#back-to-ireland">BACK TO IRELAND</a></p>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="the-song-of-glen-dun"><span class="bold large">THE SONG OF GLEN DUN.</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Sure this is blessed Erin an' this the same glen,</span>
+          </div>
+          <div class="line">
+            <span>The gold is on the whin-bush, the wather sings again,</span>
+          </div>
+          <div class="line">
+            <span>The Fairy Thorn's in flower,—an' what ails my heart then?</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Flower o' the May,</span>
+            </div>
+            <div class="line">
+              <span>Flower o' the May,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>What about the May time, an' he far away!</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Summer loves the green glen, the white bird loves the sea,</span>
+          </div>
+          <div class="line">
+            <span>An' the wind must kiss the heather top, an' the red bell hides a bee;</span>
+          </div>
+          <div class="line">
+            <span>As the bee is dear to the honey-flower, so one is dear to me.</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Flower o' the rose,</span>
+            </div>
+            <div class="line">
+              <span>Flower o' the rose,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>A thorn pricked me one day, but nobody knows.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>The bracken up the braeside has rusted in the air,</span>
+          </div>
+          <div class="line">
+            <span>Three birches lean together, so silver limbed an' fair,</span>
+          </div>
+          <div class="line">
+            <span>Och! golden leaves are flyin' fast, but the scarlet roan is rare.</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Berry o' the roan,</span>
+            </div>
+            <div class="line">
+              <span>Berry o' the roan,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>The wind sighs among the trees, but I sigh alone.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>I knit beside the turf fire, I spin upon the wheel,</span>
+          </div>
+          <div class="line">
+            <span>Winter nights for thinkin' long, round runs the reel....</span>
+          </div>
+          <div class="line">
+            <span>But he never knew, he never knew that here for him I'd kneel.</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Sparkle o' the fire,</span>
+            </div>
+            <div class="line">
+              <span>Sparkle o' the fire,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Mother Mary, keep my love, an' send me my desire!</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="corrymeela"><span class="bold large">CORRYMEELA.</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Over here in England I'm helpin' wi' the hay,</span>
+          </div>
+          <div class="line">
+            <span>An' I wisht I was in Ireland the livelong day;</span>
+          </div>
+          <div class="line">
+            <span>Weary on the English hay, an' sorra take the wheat!</span>
+          </div>
+          <div class="line">
+            <em class="italics">Och! Corrymeela an' the blue sky over it.</em>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>There' a deep dumb river flowin' by beyont the heavy trees,</span>
+          </div>
+          <div class="line">
+            <span>This livin' air is moithered wi' the bummin' o' the bees;</span>
+          </div>
+          <div class="line">
+            <span>I wisht I'd hear the Claddagh burn go runnin' through the heat</span>
+          </div>
+          <div class="line">
+            <em class="italics">Past Corrymeela, wi' the blue sky over it.</em>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>The people that's in England is richer nor the Jews,</span>
+          </div>
+          <div class="line">
+            <span>There' not the smallest young gossoon but thravels in his shoes!</span>
+          </div>
+          <div class="line">
+            <span>I'd give the pipe between me teeth to see a barefut child,</span>
+          </div>
+          <div class="line">
+            <em class="italics">Och! Corrymeela an' the low south wind.</em>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Here's hands so full o' money an' hearts so full o' care,</span>
+          </div>
+          <div class="line">
+            <span>By the luck o' love! I'd still go light for all I did go bare.</span>
+          </div>
+          <div class="line">
+            <span>"God save ye,</span> <em class="italics">colleen dhas</em><span>," I said: the girl she thought me wild.</span>
+          </div>
+          <div class="line">
+            <em class="italics">Far Corrymeela, an' the low south wind.</em>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>D'ye mind me now, the song at night is mortial hard to raise,</span>
+          </div>
+          <div class="line">
+            <span>The girls are heavy goin' here, the boys are ill to plase;</span>
+          </div>
+          <div class="line">
+            <span>When one'st I'm out this workin' hive, 'tis I'll be back again—</span>
+          </div>
+          <div class="line">
+            <em class="italics">Ay, Corrymeela, in the same soft rain.</em>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>The puff o' smoke from one ould roof before an English town!</span>
+          </div>
+          <div class="line">
+            <span>For a shaugh wid Andy Feelan here I'd give a silver crown,</span>
+          </div>
+          <div class="line">
+            <span>For a curl o' hair like Mollie's ye'll ask the like in vain,</span>
+          </div>
+          <div class="line">
+            <em class="italics">Sweet Corrymeela, an' the same soft rain.</em>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div><span class="target" id="marriage"></span><!-- MARRIAGE. -->
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>I med an' ould</span> <em class="italics">caillach</em> <span>I knowed right well on the brow</span>
+          </div>
+          <div class="inner line-block">
+            <div class="inner line-block">
+              <div class="line">
+                <span>o' Carnashee:</span>
+              </div>
+            </div>
+          </div>
+          <div class="line">
+            <span>"The top o' the mornin'!" I says to her. "God save ye!"</span>
+          </div>
+          <div class="inner line-block">
+            <div class="inner line-block">
+              <div class="line">
+                <span>she says to me:</span>
+              </div>
+            </div>
+            <div class="line">
+              <span>"An' och! if it's you,</span>
+            </div>
+            <div class="line">
+              <span>Tell me true,</span>
+            </div>
+            <div class="line">
+              <span>When are ye goin' to marry?"</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>"I'm here," says I, "to be married to-morrow,</span>
+          </div>
+          <div class="line">
+            <span>Wi' the man to find an' the money to borrow."</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"As sure as ye're young an' fair," says she, "one day ye'll</span>
+          </div>
+          <div class="inner line-block">
+            <div class="inner line-block">
+              <div class="line">
+                <span>be ugly an' ould.</span>
+              </div>
+            </div>
+          </div>
+          <div class="line">
+            <span>If ye haven't a husband, who'll care," says she, "to call ye</span>
+          </div>
+          <div class="inner line-block">
+            <div class="inner line-block">
+              <div class="line">
+                <span>in out o' the could?</span>
+              </div>
+            </div>
+            <div class="line">
+              <span>Left to yerself,</span>
+            </div>
+            <div class="line">
+              <span>Laid on the shelf,—</span>
+            </div>
+            <div class="line">
+              <span>Now is yer time to marry.</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Musha! don't tell</span> <em class="italics">me</em> <span>ye'll be married to-morrow,</span>
+          </div>
+          <div class="line">
+            <span>Wi' the man to find an' the money to borrow."</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"I may be dead ere I'm ould," says I, "for nobody knows their day.</span>
+          </div>
+          <div class="line">
+            <span>I never was fear'd o' the could," says I, "but I'm fear'd</span>
+          </div>
+          <div class="inner line-block">
+            <div class="inner line-block">
+              <div class="line">
+                <span>to give up me way.</span>
+              </div>
+            </div>
+            <div class="line">
+              <span>Good or bad,</span>
+            </div>
+            <div class="line">
+              <span>Sorry or glad,</span>
+            </div>
+            <div class="line">
+              <span>'Tis mine no more when I marry.</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>So here stand I, to be married to-morrow,</span>
+          </div>
+          <div class="line">
+            <span>Wi' the man to find an' the money to borrow."</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>The poor ould</span> <em class="italics">caillach</em> <span>went down the hill shakin' her finger at me.</span>
+          </div>
+          <div class="line">
+            <span>"'Tis on top o' the world ye think yerself still, an' that's</span>
+          </div>
+          <div class="inner line-block">
+            <div class="inner line-block">
+              <div class="line">
+                <span>what it is," says she.</span>
+              </div>
+            </div>
+            <div class="line">
+              <span>But</span> <em class="italics">thon</em> <span>was the day</span>
+            </div>
+            <div class="line">
+              <span>Dan MacIlray</span>
+            </div>
+            <div class="line">
+              <span>Had me promise to marry.</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>So here stand I, to be married to-morrow,—</span>
+          </div>
+          <div class="line">
+            <span>The man he is found, but the money's to borrow.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="sea-wrack"><span class="bold large">SEA WRACK.</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>The wrack was dark an' shiny where it floated in the sea,</span>
+          </div>
+          <div class="line">
+            <span>There was no one in the brown boat but only him an' me;</span>
+          </div>
+          <div class="line">
+            <span>Him to cut the sea wrack, me to mind the boat,</span>
+          </div>
+          <div class="line">
+            <span>An' not a word between us the hours we were afloat.</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>The wet wrack,</span>
+            </div>
+            <div class="line">
+              <span>The sea wrack,</span>
+            </div>
+            <div class="line">
+              <span>The wrack was strong to cut.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>We laid it on the grey rocks to wither in the sun,</span>
+          </div>
+          <div class="line">
+            <span>An' what should call my lad then, to sail from Cushendun?</span>
+          </div>
+          <div class="line">
+            <span>With a low moon, a full tide, a swell upon the deep,</span>
+          </div>
+          <div class="line">
+            <span>Him to sail the old boat, me to fall asleep.</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>The dry wrack,</span>
+            </div>
+            <div class="line">
+              <span>The sea wrack,</span>
+            </div>
+            <div class="line">
+              <span>The wrack was dead so soon.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>There' a fire low upon the rocks to burn the wrack to kelp,</span>
+          </div>
+          <div class="line">
+            <span>There' a boat gone down upon the Moyle, an' sorra one to help!</span>
+          </div>
+          <div class="line">
+            <span>Him beneath the salt sea, me upon the shore,</span>
+          </div>
+          <div class="line">
+            <span>By sunlight or moonlight we'll lift the wrack no more.</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>The dark wrack,</span>
+            </div>
+            <div class="line">
+              <span>The sea wrack,</span>
+            </div>
+            <div class="line">
+              <span>The wrack may drift ashore.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="a-broken-song"><span class="bold large">A BROKEN SONG.</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>'</span><em class="italics">Where am I from?</em><span>' From the green hills of Erin.</span>
+          </div>
+          <div class="line">
+            <span>'</span><em class="italics">Have I no song then?</em><span>' My songs are all sung.</span>
+          </div>
+          <div class="line">
+            <span>'</span><em class="italics">What o' my love?</em><span>' 'Tis alone I am farin'.</span>
+          </div>
+          <div class="line">
+            <span>Old grows my heart, an' my voice yet is young.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>'</span><em class="italics">If she was tall?</em><span>' Like a king's own daughter.</span>
+          </div>
+          <div class="line">
+            <span>'</span><em class="italics">If she was fair?</em><span>' Like a mornin' o' May.</span>
+          </div>
+          <div class="line">
+            <span>When she'd come laughin' 'twas the runnin' wather,</span>
+          </div>
+          <div class="line">
+            <span>When she'd come blushin' 'twas the break o' day.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>'</span><em class="italics">Where did she dwell?</em><span>' Where one'st I had my dwellin'.</span>
+          </div>
+          <div class="line">
+            <span>'</span><em class="italics">Who loved her best?</em><span>' There' no one now will know.</span>
+          </div>
+          <div class="line">
+            <span>'</span><em class="italics">Where is she gone?</em><span>' Och, why would I be tellin'!</span>
+          </div>
+          <div class="line">
+            <span>Where she is gone there I can never go.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="the-fairy-lough"><span class="bold large">THE FAIRY LOUGH.</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Loughareema! Loughareema</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Lies so high among the heather;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>A little lough, a dark lough,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>The wather's black an' deep.</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Ould herons go a-fishin' there</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' sea-gulls all together</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Float roun' the one green island</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>On the fairy lough asleep.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Loughareema, Loughareema;</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>When the sun goes down at seven,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>When the hills are dark an'</span> <em class="italics">airy</em><span>,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>'Tis a curlew whistles sweet!</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Then somethin' rustles all the reeds</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>That stand so thick an' even;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>A little wave runs up the shore</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' flees, as if on feet.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Loughareema, Loughareema!</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Stars come out, an' stars are hidin';</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>The wather whispers on the stones,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>The flittherin' moths are free</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>One'st before the mornin' light</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>The Horsemen will come ridin'</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Roun' an' roun' the fairy lough,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' no one there to see.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="a-song-of-glenann"><span class="bold large">A SONG OF GLENANN.</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Och, when we lived in ould Glenann</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Meself could lift a song!</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>An' ne'er an hour by day or dark</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Would I be thinkin' long.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>The weary wind might take the roof,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>The rain might lay the corn;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>We'd up an' look for betther luck</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>About the morrow's morn.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>But since we come away from there</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' far across the say,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>I still have wrought, an' still have thought</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>The way I'm doin' the day.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>An' now we're quarely betther fixed,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>In troth! there' nothin' wrong:</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>But me an' mine, by rain an' shine</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>We do be thinkin' long.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="forgettin"><span class="bold large">"FORGETTIN'."</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>The night when last I saw my lad</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>His eyes were bright an' wet.</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>He took my two hands in his own,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>"'Tis well," says he, "we're met.</span>
+            </div>
+          </div>
+          <div class="line">
+            <em class="italics">Asthore machree!</em> <span>the likes o' me</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>I bid ye now forget."</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Ah, sure the same's a thriflin' thing,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>'Tis more I'd do for him!</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>I mind the night I promised well,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Away on Ballindim.—</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>An' every little while or so</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>I thry forgettin' Jim.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>It shouldn't take that long to do,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' him not very tall:</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>'Tis quare the way I'll hear his voice,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>A boy that's out o' call,—</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>An' whiles I'll see him stand as plain</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>As e'er a six-fut wall.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Och, never fear, my jewel!</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>I'd forget ye now this minute,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>If I only had a notion</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>O' the way I should begin it;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>But first an' last it isn't known</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>The heap o' throuble's in it.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Meself began the night ye went</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' hasn't done it yet;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>I'm nearly fit to give it up,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>For where's the use to fret?—</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>An' the memory's fairly spoilt on me</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Wid mindin' to forget.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="denny-s-daughter"><span class="bold large">DENNY'S DAUGHTER.</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Denny's daughter stood a minute in the field I be to pass,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>All as quiet as her shadow lyin' by her on the grass;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>In her hand a switch o' hazel from the nut tree's crooked root,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Well I mind the crown o' clover crumpled undher one bare foot.</span>
+            </div>
+            <div class="inner line-block">
+              <div class="line">
+                <span>For the look of her,</span>
+              </div>
+              <div class="line">
+                <span>The look of her</span>
+              </div>
+              <div class="line">
+                <span>Comes back on me to-day,—</span>
+              </div>
+              <div class="line">
+                <span>Wi' the eyes of her,</span>
+              </div>
+              <div class="line">
+                <span>The eyes of her</span>
+              </div>
+              <div class="line">
+                <span>That took me on the way.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Though I seen poor Denny's daughter white an' stiff upon her bed,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Yet I be to think there's sunlight fallin' somewhere on her head:</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>She'll be singin'</span> <em class="italics">Ave Mary</em> <span>where the flowers never wilt,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>She, the girl my own hands covered wi' the narrow daisy-quilt....</span>
+            </div>
+            <div class="inner line-block">
+              <div class="line">
+                <span>For the love of her,</span>
+              </div>
+              <div class="line">
+                <span>The love of her</span>
+              </div>
+              <div class="line">
+                <span>That would not be my wife:</span>
+              </div>
+              <div class="line">
+                <span>An' the loss of her,</span>
+              </div>
+              <div class="line">
+                <span>The loss of her</span>
+              </div>
+              <div class="line">
+                <span>Has left me lone for life.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="lost"><span class="bold large">LOST.</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Listen, oh my jewel, I would say,—</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Only wait to' I can get the word:</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Sure I thought I had it sweet an' gay</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Like the bravest song o' summer bird.</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Faith! I knew it well an' very well</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>When this hour the rain begun to fall,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Now the sorra one o' me can tell</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>What about it was at all, at all.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Listen, oh my jewel, I was wrong,—</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Never, never lived a word so sad;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Not the heavy sea that drives along</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Bears such weighty throuble as it had.</span>
+            </div>
+          </div>
+          <div class="line">
+            <em class="italics">Och anee!</em> <span>wi' ne'er a voice to cry,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Like the weary cloud or drownin' moon</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>So it sank, or so was carried by:</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Never told is all forgot so soon.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="cuttin-rushes"><span class="bold large">"CUTTIN' RUSHES."</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Oh maybe it was yesterday, or fifty years ago!</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Meself was risin' early on a day for cuttin' rushes.</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Walkin' up the Brabla' burn, still the sun was low.</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Now I'd hear the burn run an' then I'd hear the thrushes.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <em class="italics">Young, still young!</em><span>—an' drenchin' wet the grass,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Wet the golden honeysuckle hangin' sweetly down;</span>
+            </div>
+          </div>
+          <div class="line">
+            <em class="italics">Here, lad, here!</em> <span>will ye follow where I pass,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' find me cuttin' rushes on the mountain.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Then was it only yesterday, or fifty years or so?</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <em class="italics">Rippin'</em> <span>round the bog pools high among the heather,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>The hook it made me hand sore, I had to leave it go,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>'Twas he that cut the rushes then for me to bind together.</span>
+            </div>
+          </div>
+          <div class="line">
+            <em class="italics">Come, dear, come!</em><span>—an' back along the burn</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>See the darlin' honeysuckle hangin' like a crown.</span>
+            </div>
+          </div>
+          <div class="line">
+            <em class="italics">Quick, one kiss</em><span>,—sure, there' some one at the turn!</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>"Oh, we're afther cuttin' rushes on the mountain."</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Yesterday, yesterday, or fifty years ago....</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>I waken out o' dreams when I hear the summer thrushes.</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Oh, that's the Brabla' burn, I can hear it sing an' flow,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>For all that's fair, I'd sooner see a bunch o' green rushes.</span>
+            </div>
+          </div>
+          <div class="line">
+            <em class="italics">Run, burn, run!</em> <span>can ye mind when we were young?</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>The honeysuckle hangs above, the pool is dark an' brown:</span>
+            </div>
+          </div>
+          <div class="line">
+            <em class="italics">Sing, burn, sing!</em> <span>can ye mind the song ye sung</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>The day we cut the rushes on the mountain?</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="the-ould-lad"><span class="bold large">"THE OULD LAD."</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>I mind meself a wee boy wi' no plain talk,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' standin' not the height o' two peats;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>There was things meself consated 'or the time that I could walk,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' who's to tell when wit an' childer meets?</span>
+            </div>
+            <div class="inner line-block">
+              <div class="line">
+                <span>'Twas the daisies down in the low grass,</span>
+              </div>
+              <div class="inner line-block">
+                <div class="line">
+                  <span>The stars high up in the skies,</span>
+                </div>
+              </div>
+              <div class="line">
+                <span>The first I knowed of a mother's face</span>
+              </div>
+              <div class="inner line-block">
+                <div class="line">
+                  <span>Wi' the kind love in her eyes,</span>
+                </div>
+                <div class="inner line-block">
+                  <div class="inner line-block">
+                    <div class="line">
+                      <span>Och, och!</span>
+                    </div>
+                  </div>
+                  <div class="line">
+                    <span>The kind love in her eyes.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>I went the way of other lads that's neither good nor bad,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' still, d'ye see, a lad has far to go;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>But the things meself consated when I wasn't sick nor sad,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>They're aisy told, an' little use to know.</span>
+            </div>
+            <div class="inner line-block">
+              <div class="line">
+                <span>'Twas whiles a boat on the say beyont,</span>
+              </div>
+              <div class="inner line-block">
+                <div class="line">
+                  <span>An' whiles a girl on the shore,</span>
+                </div>
+              </div>
+              <div class="line">
+                <span>An' whiles a scrape o' the fiddle-strings,</span>
+              </div>
+              <div class="inner line-block">
+                <div class="line">
+                  <span>Or maybe an odd thing more</span>
+                </div>
+                <div class="inner line-block">
+                  <div class="inner line-block">
+                    <div class="line">
+                      <span>In troth!</span>
+                    </div>
+                  </div>
+                  <div class="line">
+                    <span>Maybe an odd thing more.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>A man, they say, in spite of all, is betther for a wife,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>In-undher this ould roof I live me lone;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>I never seen the woman yet I wanted all me life,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' I never made me pillow on a stone.</span>
+            </div>
+            <div class="inner line-block">
+              <div class="line">
+                <span>'Tis "fancy buys the ribbon" an' all,</span>
+              </div>
+              <div class="inner line-block">
+                <div class="line">
+                  <span>An' fancy sticks to the young;</span>
+                </div>
+              </div>
+              <div class="line">
+                <span>But a man of his years can do wi' a pipe</span>
+              </div>
+              <div class="inner line-block">
+                <div class="line">
+                  <span>Can smoke an' hould his tongue,</span>
+                </div>
+                <div class="inner line-block">
+                  <div class="inner line-block">
+                    <div class="line">
+                      <span>D'ye mind,</span>
+                    </div>
+                  </div>
+                  <div class="line">
+                    <span>Smoke an' hould his tongue.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Ye see me now an ould man, his work near done,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Sure the hair upon me head's gone white;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>But the things meself consated 'or the time that I could run,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>They're the nearest to me heart this night.</span>
+            </div>
+            <div class="inner line-block">
+              <div class="line">
+                <span>Just the daisies down in the low grass,</span>
+              </div>
+              <div class="inner line-block">
+                <div class="line">
+                  <span>The stars high up in the skies,</span>
+                </div>
+              </div>
+              <div class="line">
+                <span>The first I knowed of a mother's face</span>
+              </div>
+              <div class="inner line-block">
+                <div class="line">
+                  <span>Wi' the kind love in her eyes,</span>
+                </div>
+                <div class="inner line-block">
+                  <div class="inner line-block">
+                    <div class="line">
+                      <span>Och, och!</span>
+                    </div>
+                  </div>
+                  <div class="line">
+                    <span>The kind love in her eyes.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="the-rachray-man"><span class="bold large">THE RACHRAY MAN.</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Och, what was it got me at all that time</span>
+          </div>
+          <div class="line">
+            <span>To promise I'd marry a Rachray man?</span>
+          </div>
+          <div class="line">
+            <span>An' now he'll not listen to rason or rhyme,</span>
+          </div>
+          <div class="line">
+            <span>He's strivin' to hurry me all that he can.</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>"Come on, an' ye</span> <em class="italics">be</em> <span>to come on!" says he,</span>
+            </div>
+            <div class="line">
+              <span>"Ye're bound for the Island, to live wi' me."</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>See Rachray Island beyont in the bay,</span>
+          </div>
+          <div class="line">
+            <span>An' the dear knows what they be doin' out there</span>
+          </div>
+          <div class="line">
+            <span>But fishin' an' fightin' an' tearin' away,</span>
+          </div>
+          <div class="line">
+            <span>An' who's to hindher, an' what do they care?</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>The goodness can tell what 'ud happen to me</span>
+            </div>
+            <div class="line">
+              <span>When Rachray 'ud have me,</span> <em class="italics">anee, anee!</em>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>I might have took Pether from over the hill,</span>
+          </div>
+          <div class="line">
+            <span>A dacent poacher, the kind poor boy:</span>
+          </div>
+          <div class="line">
+            <span>Could I keep the ould places about me still</span>
+          </div>
+          <div class="line">
+            <span>I'd never set foot out o' sweet Ballyvoy.</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>My sorra on Rachray, the could sea-caves,</span>
+            </div>
+            <div class="line">
+              <span>An' blackneck divers, an' weary ould waves!</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>I'll never win back now, whatever may fall,</span>
+          </div>
+          <div class="line">
+            <span>So give me good luck, for ye'll see me no more;</span>
+          </div>
+          <div class="line">
+            <span>Sure an Island man is the mischief an' all—</span>
+          </div>
+          <div class="line">
+            <span>An' me that never was married before!</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Oh think o' my fate when ye dance at a fair,</span>
+            </div>
+            <div class="line">
+              <span>In Rachray there' no Christianity there.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="birds"><span class="bold large">BIRDS.</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Sure maybe ye've heard the storm-thrush</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Whistlin' bould in March,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Before there' a primrose peepin' out,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Or a wee red cone on the larch;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Whistlin' the sun to come out o' the cloud,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' the wind to come over the sea,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>But for all he can whistle so clear an' loud,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>He's never the bird for me.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Sure maybe ye've seen the song-thrush</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>After an April rain</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Slip from in-undher the drippin' leaves,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Wishful to sing again;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>An' low wi' love when he's near the nest,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' loud from the top o' the tree,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>But for all he can flutter the heart in your breast,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>He's never the bird for me.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Sure maybe ye've heard the cushadoo</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Callin' his mate in May,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>When one sweet thought is the whole of his life,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' he tells it the one sweet way.</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>But my heart is sore at the cushadoo</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Filled wid his own soft glee,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Over an' over his "me an' you!"</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>He's never the bird for me.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Sure maybe ye've heard the red-breast</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Singin' his lone on a thorn,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Mindin' himself o' the dear days lost,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Brave wid his heart forlorn.</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>The time is in dark November,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' no spring hopes has he:</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>"Remember," he sings, "remember!"</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Ay,</span> <em class="italics">thon's</em> <span>the wee bird for me.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="johneen"><span class="bold large">JOHNEEN.</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Sure he's five months old, an' he's two foot long,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Baby Johneen;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Watch yerself now, for he's terrible sthrong,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Baby Johneen.</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>An' his fists 'ill be up if ye make any slips,</span>
+          </div>
+          <div class="line">
+            <span>He has finger-ends like the daisy-tips,</span>
+          </div>
+          <div class="line">
+            <span>But he'll have ye attend to the words of his lips,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Will Johneen.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>There' nobody can rightly tell the colour of his eyes,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>This Johneen;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>For they're partly o' the earth an' still they're partly o' the skies,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Like Johneen.</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>So far as he's thravelled he's been laughin' all the way,</span>
+          </div>
+          <div class="line">
+            <span>For the little soul is quare an' wise, the little heart is gay;</span>
+          </div>
+          <div class="line">
+            <span>An' he likes the merry daffodils, he thinks they'd do to play</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>With Johneen.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>He'll sail a boat yet, if he only has his luck,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Young Johneen,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>For he takes to the wather like any little duck,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Boy Johneen;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Sure them are the hands now to pull on a rope,</span>
+          </div>
+          <div class="line">
+            <span>An' nate feet for walkin' the deck on a slope,</span>
+          </div>
+          <div class="line">
+            <span>But the ship she must wait a wee while yet, I hope,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>For Johneen.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>For we couldn't do wantin' him, not just yet,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Och, Johneen;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>'Tis you that are the daisy, an' you that are the pet,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Wee Johneen.</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Here's to your health, an' we'll dhrink it to-night</span>
+          </div>
+          <div class="line">
+            <em class="italics">Slainte gal, avic machree!</em> <span>live an' do right,</span>
+          </div>
+          <div class="line">
+            <em class="italics">Slainte gal avourneen!</em> <span>may your days be bright,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Johneen!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="beauty-s-a-flower"><span class="bold large">"BEAUTY'S A FLOWER."</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <em class="italics">Youth's for an hour,</em>
+          </div>
+          <div class="line">
+            <em class="italics">Beauty's a flower,</em>
+          </div>
+          <div class="line">
+            <em class="italics">But love is the jewel that wins the world.</em>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Youth's for an hour, an' the taste o' life is sweet,</span>
+          </div>
+          <div class="line">
+            <span>Ailes was a girl that stepped on two bare feet;</span>
+          </div>
+          <div class="line">
+            <span>In all my days I never seen the one as fair as she,</span>
+          </div>
+          <div class="line">
+            <span>I'd have lost my life for Ailes, an' she never cared for me.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Beauty's a flower, an' the days o' life are long,</span>
+          </div>
+          <div class="line">
+            <span>There' little knowin' who may live to sing another song;</span>
+          </div>
+          <div class="line">
+            <span>For Ailes was the fairest, but another is my wife,</span>
+          </div>
+          <div class="line">
+            <span>An' Mary—God be good to her!—is all I love in life.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <em class="italics">Youth's for an hour,</em>
+          </div>
+          <div class="line">
+            <em class="italics">Beauty's a flower,</em>
+          </div>
+          <div class="line">
+            <em class="italics">But love is the jewel that wins the world.</em>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="the-boy-from-ballytearim"><span class="bold large">THE BOY FROM BALLYTEARIM.</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>He was born in Ballytearim, where there' little work to do,</span>
+          </div>
+          <div class="line">
+            <span>An' the longer he was livin' there the poorer still he grew;</span>
+          </div>
+          <div class="line">
+            <span>Says he till all belongin' him, "Now happy may ye be!</span>
+          </div>
+          <div class="line">
+            <span>But I'm off to find me fortune," sure he says, says he.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>"All the gold in Ballytearim is what's stickin' to the whin;</span>
+          </div>
+          <div class="line">
+            <span>All the crows in Ballytearim has a way o' gettin' thin."</span>
+          </div>
+          <div class="line">
+            <span>So the people did be praisin' him the year he wint away,—</span>
+          </div>
+          <div class="line">
+            <span>"Troth, I'll hould ye can do it," sure they says, says they.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Och, the boy 'ud still be thinkin' long, an' he across the foam,</span>
+          </div>
+          <div class="line">
+            <span>An' the two ould hearts be thinkin' long that waited for him home:</span>
+          </div>
+          <div class="line">
+            <span>But a girl that sat her lone an' whiles, her head upon her knee,</span>
+          </div>
+          <div class="line">
+            <span>Would be sighin' low for sorra, not a word says she.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>He won home to Ballytearim, an' the two were livin' yet,</span>
+          </div>
+          <div class="line">
+            <span>When he heard where she was lyin' now the eyes of him were wet;</span>
+          </div>
+          <div class="line">
+            <span>"Faith, here's me two fists full o' gold, an' little good to me</span>
+          </div>
+          <div class="line">
+            <span>When I'll never meet an' kiss her," sure he says, says he.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Then the boy from Ballytearim set his face another road,</span>
+          </div>
+          <div class="line">
+            <span>An' whatever luck has followed him was never rightly knowed:</span>
+          </div>
+          <div class="line">
+            <span>But still it's truth I'm tellin' ye—or may I never sin!—</span>
+          </div>
+          <div class="line">
+            <span>All the gold in Ballytearim is what's stickin' to the whin.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="i-mind-the-day"><span class="bold large">I MIND THE DAY.</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>I mind the day I'd wish I was a say-gull flyin' far,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>For then I'd fly an' find you in the West;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>An' I'd wish I was a little rose as sweet as roses are,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>For then you'd maybe wear it on your breast,</span>
+            </div>
+            <div class="inner line-block">
+              <div class="line">
+                <em class="italics">Achray!</em>
+              </div>
+            </div>
+            <div class="line">
+              <span>You'd maybe take an' wear it on your breast.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>I'd wish I could be living near, to love you day an' night,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>To let no throuble touch you or annoy;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>I'd wish I could be dyin' here to rise a spirit light,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>If Them above 'ud let me bring you joy,</span>
+            </div>
+            <div class="inner line-block">
+              <div class="line">
+                <em class="italics">Achray!</em>
+              </div>
+            </div>
+            <div class="line">
+              <span>If Them above 'ud let me win you joy.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>An' now I wish no wishes, nor ever fall a tear,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Nor take a thought beyont the way I'm led:</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>I mind the day that's over-by, an' bless the day that's here,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>There be to come a day when we'll be dead,</span>
+            </div>
+            <div class="inner line-block">
+              <div class="line">
+                <em class="italics">Achray!</em>
+              </div>
+            </div>
+            <div class="line">
+              <span>A longer, lighter day when we'll be dead.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="grace-for-light"><span class="bold large">GRACE FOR LIGHT.</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>When we were little childer we had a quare wee house,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Away up in the heather by the head o' Brabla' burn;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>The hares we'd see them scootin', an' we'd hear the crowin' grouse,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' when we'd all be in at night ye'd not get room to turn.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>The youngest two She'd put to bed, their faces to the wall,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' the lave of us could sit aroun', just anywhere we might;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Herself 'ud take the rush-dip an' light it for us all,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' "</span><em class="italics">God be thankèd!</em><span>" she would say,—"</span><em class="italics">now we have a light</em><span>."</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Then we be to quet the laughin' an' pushin' on the floor,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' think on One who called us to come and be forgiven;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Himself 'ud put his pipe down, an' say the good word more,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>"</span><em class="italics">May the Lamb o' God lead us all to the Light o' Heaven!</em><span>"</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>There' a wheen things that used to be an' now has had their day,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>The nine Glens of Antrim can show ye many a sight;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>But not the quare wee house where we lived up Brabla' way,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Nor a child in all the nine Glens that knows the grace for light.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="the-grand-match"><span class="bold large">THE GRAND MATCH.</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Dennis was hearty when Dennis was young,</span>
+          </div>
+          <div class="line">
+            <span>High was his step in the jig that he sprung,</span>
+          </div>
+          <div class="line">
+            <em class="italics">He</em> <span>had the looks an' the sootherin' tongue,—</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' he wanted a girl wid a fortune.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Nannie was grey-eyed an' Nannie was tall,</span>
+          </div>
+          <div class="line">
+            <span>Fair was the face hid in-undher her shawl,</span>
+          </div>
+          <div class="line">
+            <span>Troth! an' he liked her the best o' them all,—</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>But she'd not a</span> <em class="italics">traneen</em> <span>to her fortune.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>He be to look out for a likelier match,</span>
+          </div>
+          <div class="line">
+            <span>So he married a girl that was counted a catch,</span>
+          </div>
+          <div class="line">
+            <span>An' as ugly as need be, the dark little patch,—</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>But that was a thrifle, he tould her.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>She brought him her good-lookin' gold to admire,</span>
+          </div>
+          <div class="line">
+            <span>She brought him her good-lookin' cows to his byre,</span>
+          </div>
+          <div class="line">
+            <span>But far from good-lookin' she sat by his fire,—</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' paid him that "thrifle" he tould her.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>He met pretty Nan when a month had gone by,</span>
+          </div>
+          <div class="line">
+            <span>An' he thought like a fool to get round her he'd try;</span>
+          </div>
+          <div class="line">
+            <span>Wid a smile on her lip an' a spark in her eye,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>She said, "How is the woman that owns ye?"</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Och, never be tellin' the life that he's led!</span>
+          </div>
+          <div class="line">
+            <span>Sure many's the night that he'll wish himself dead,</span>
+          </div>
+          <div class="line">
+            <span>For the sake o' two eyes in a pretty girl's head,—</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' the tongue o' the woman that owns him.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="the-sailor-man"><span class="bold large">THE SAILOR MAN.</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Sure a terrible time I was out o' the way,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Over the sea, over the sea,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Till I come back to Ireland one sunny day,—</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Betther for me, betther for me</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>The first time me foot got the feel o' the ground</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>I was sthrollin' along in an Irish city,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>That hasn't its aquil the world around</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>For the air that is sweet an' the girls that are pretty.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Light on their feet now they passed me an' sped,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Give you me word, give you me word,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Every girl wid a turn o' the head</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Just like a bird, just like a bird;</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>An' the lashes so thick round their beautiful eyes</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Shinin' to tell you it's fair time o' day wid them,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Back in me heart wid a kind o' surprise</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>I think how the Irish girls has the way wid them!</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Och man alive! but it's little ye know</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>That never was there, never was there.</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Look where ye like for them, long may ye go,—</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>What do I care? what do I care?</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Plenty as blackberries where will ye find</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Rare pretty girls not by two nor by three o' them?</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Only just there where they grow, d'ye mind</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Still like the blackberries, more than ye see o' them.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Long, long away, an' no matther how far,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>'Tis the girls that I miss, the girls that I miss:</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Women are round ye wherever ye are</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Not worth a kiss, not worth a kiss.</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Over in Ireland many's the one,—</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Well do I know, that has nothing to say wid them,—</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Sweeter than anythin' undher the sun,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Och, 'tis the Irish girls has the way wid them!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="at-sea"><span class="bold large">AT SEA.</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>'Tis the long blue Head o' Garron</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>From the sea,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Och, we're sailin' past the Garron</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>On the sea.</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Now Glen Ariff lies behind,</span>
+          </div>
+          <div class="line">
+            <span>Where the waters fall an' wind</span>
+          </div>
+          <div class="line">
+            <span>By the willows o' Glen Ariff to the sea.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Ould Luirgedan rises green</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>By the sea,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Ay, he stands between the Glens</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>An' the sea.</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Now we're past the darklin' caves,</span>
+          </div>
+          <div class="line">
+            <span>Where the breakin' summer waves</span>
+          </div>
+          <div class="line">
+            <span>Wandher in wi' their trouble from the sea.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>But Cushendun lies nearer</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>To the sea,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>An'</span> <em class="italics">thon's</em> <span>a shore is dearer</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Still to me,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>For the land that I am leavin'</span>
+          </div>
+          <div class="line">
+            <span>Sure the heart I have is grievin',</span>
+          </div>
+          <div class="line">
+            <span>But the ship has set her sails for the sea.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Och, what's this is deeper</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Than the sea?</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>An' what's this is stronger</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Nor the sea?</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>When the call is "all or none,"</span>
+          </div>
+          <div class="line">
+            <span>An' the answer "all for one,"</span>
+          </div>
+          <div class="line">
+            <span>Then we be to sail away across the sea.</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="lookin-back"><span class="bold large">"LOOKIN' BACK."</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Wathers o' Moyle an' the white gulls flyin',</span>
+          </div>
+          <div class="line">
+            <span>Since I was near ye what have I seen?</span>
+          </div>
+          <div class="line">
+            <span>Deep great seas, an' a sthrong wind sighin'</span>
+          </div>
+          <div class="line">
+            <span>Night an' day where the waves are green.</span>
+          </div>
+          <div class="line">
+            <em class="italics">Struth na Moile</em><span>, the wind goes sighin'</span>
+          </div>
+          <div class="line">
+            <span>Over a waste o' wathers green.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Slemish an' Trostan, dark wi' heather,</span>
+          </div>
+          <div class="line">
+            <span>High are the Rockies, airy-blue;</span>
+          </div>
+          <div class="line">
+            <span>Sure ye have snows in the winter weather,</span>
+          </div>
+          <div class="line">
+            <span>Here they're lyin' the long year through.</span>
+          </div>
+          <div class="line">
+            <span>Snows are fair in the summer weather,</span>
+          </div>
+          <div class="line">
+            <span>Och, an' the shadows between are blue!</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Lone Glen Dun an' the wild glen flowers,</span>
+          </div>
+          <div class="line">
+            <span>Little ye know if the prairie is sweet.</span>
+          </div>
+          <div class="line">
+            <span>Roses for miles, an' redder than ours</span>
+          </div>
+          <div class="line">
+            <span>Spring here undher the horses' feet,</span>
+          </div>
+          <div class="line">
+            <span>Ay, an' the black-eyed gold sunflowers,</span>
+          </div>
+          <div class="line">
+            <span>Not as the glen flowers small an' sweet.</span>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Wathers o' Moyle, I hear ye callin'</span>
+          </div>
+          <div class="line">
+            <span>Clearer for half o' the world between,</span>
+          </div>
+          <div class="line">
+            <span>Antrim hills an' the wet rain fallin'</span>
+          </div>
+          <div class="line">
+            <span>Whiles ye are nearer than snow-tops keen:</span>
+          </div>
+          <div class="line">
+            <span>Dreams o' the night an' a night wind callin'—</span>
+          </div>
+          <div class="line">
+            <span>What is the half o' the world between?</span>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="the-north-westcanada"><span class="bold large">THE NORTH-WEST—CANADA.</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Oh would ye hear, and would ye hear</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Of the windy, wide North-West?</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Faith! 'tis a land as green as the sea,</span>
+          </div>
+          <div class="line">
+            <span>That rolls as far and rolls as free,</span>
+          </div>
+          <div class="line">
+            <span>With drifts of flowers, so many there be,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Where the cattle roam and rest.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Oh could ye see, and could ye see</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>The great gold skies so clear,</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>The rivers that race through the pine-shade dark,</span>
+          </div>
+          <div class="line">
+            <span>The mountainous snows that take no mark,</span>
+          </div>
+          <div class="line">
+            <span>Sun-lit and high on the Rockies stark,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>So far they seem as near.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Then could ye feel, and could ye feel</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>How fresh is a Western night!</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>When the long land-breezes rise and pass</span>
+          </div>
+          <div class="line">
+            <span>And sigh in the rustling prairie grass,</span>
+          </div>
+          <div class="line">
+            <span>When the dark-blue skies are clear as glass,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>And the same old stars are bright.</span>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>But could ye know, and for ever know</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>The word of the young North-West!</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>A word she breathes to the true and bold,</span>
+          </div>
+          <div class="line">
+            <span>A word misknown to the false and cold,</span>
+          </div>
+          <div class="line">
+            <span>A word that never was spoken or sold,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>But the one that knows is blest.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst" id="back-to-ireland"><span class="bold large">BACK TO IRELAND.</span></p>
+    <div class="vspace" style="height: 2em"></div><!--  -->
+    <blockquote>
+      <div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>Oh tell me, will I ever win to Ireland again,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <em class="italics">Astore!</em> <span>from the far North-West?</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>Have we given all the rainbows, an' green woods an' rain,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>For the suns an' the snows o' the West?</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>"Them that goes to Ireland must thravel night an' day,</span>
+          </div>
+          <div class="line">
+            <span>An' them that goes to Ireland must sail across the say,</span>
+          </div>
+          <div class="line">
+            <span>For the len'th of here to Ireland is half the world away—</span>
+          </div>
+          <div class="line">
+            <span>An' you'll lave your heart behind you in the West.</span>
+          </div>
+          <div class="inner line-block">
+            <div class="inner line-block">
+              <div class="line">
+                <span>Set your face for Ireland,</span>
+              </div>
+              <div class="line">
+                <span>Kiss your friends in Ireland,</span>
+              </div>
+              <div class="line">
+                <span>But lave your heart behind you in the West."</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="line-block outermost">
+          <div class="line">
+            <span>On a dim an' shiny mornin' the ship she comes to land,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Early, oh early in the mornin',</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>The silver wathers o' the Foyle go slidin' to the strand,</span>
+          </div>
+          <div class="inner line-block">
+            <div class="line">
+              <span>Whisperin', "Ye're welcome in the mornin'."</span>
+            </div>
+          </div>
+          <div class="line">
+            <span>There's darkness on the holy hills I know are close aroun',</span>
+          </div>
+          <div class="line">
+            <span>But the stars are shinin' up the sky, the stars are shinin' down,</span>
+          </div>
+          <div class="line">
+            <span>They make a golden cross above, they make a golden crown,</span>
+          </div>
+          <div class="line">
+            <span>An' meself could tell ye why,—in the mornin'.</span>
+          </div>
+          <div class="inner line-block">
+            <div class="inner line-block">
+              <div class="line">
+                <span>Sure an' this is Ireland,</span>
+              </div>
+              <div class="line">
+                <span>Thank God for Ireland!</span>
+              </div>
+              <div class="line">
+                <span>I'm comin' back to Ireland the mornin'.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </blockquote>
+    <div class="vspace" style="height: 4em"></div>
+    <p class="center pfirst"><span class="small">PRINTED BY WILLIAM BLACKWOOD AND SONS.</span></p>
+    <div class="vspace" style="height: 6em"></div><!-- -*- encoding: utf-8 -*- -->
+    <div class="backmatter"></div>
+    <div class="cleardoublepage"></div>
+  </div>
+</body>
+</html>
